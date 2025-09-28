@@ -10,8 +10,10 @@ def logger(path):
                 oldname = old_function.__name__
                 f.write(f'Название функции "{oldname}"\n')
                 f.write(f'Аргументы функции {oldname} - {args}{kwargs}\n')
+                time = str(dtime.now())
                 f.write(f'Время начала работы функции {time}\n')
                 result = old_function(*args, **kwargs)
+                time = str(dtime.now())
                 f.write(f'Время конца работы функции {time}\n')
                 f.write(f'Результат - {result}\n\n')
             return result
